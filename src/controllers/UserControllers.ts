@@ -1,30 +1,30 @@
-import { Request, Response } from "express";
+import { NotFoundError } from "../helpers/api-error";
 import { UserService } from "../services/UserServices";
 
 export class UserControllers {
-  async handleGetUsers(req: Request, res: Response) {
+  async handleFindAllUsers(req, res) {
     const service = new UserService();
 
-    const getUsers = await service.getUsersService();
+    const getUsers = await service.findAllUsers();
 
-    return res.json(getUsers).status(200);
+    return res.status(200).json(getUsers);
   }
 
-  async handleGetUserById(req: Request, res: Response) {
+  async handleFindUserById(req, res) {
     const { id } = req.params;
 
     const service = new UserService();
 
-    const getById = service.getUserByIdService({ id });
+    const getById = service.findUserById(id);
 
-    return res.json(getById).status(200);
+    return res.status(200).json(getById);
   }
 
-  async handleCreateUser(req: Request, res: Response) {
+  async handleCreateNewUser(req, res) {
     const { email, name, password } = req.body;
     const service = new UserService();
 
-    const createUserService = await service.createUserService({
+    const createUserService = await service.createNewUser({
       email,
       name,
       password,
@@ -33,24 +33,29 @@ export class UserControllers {
     return res.status(201).json(createUserService);
   }
 
-  async handleUpdateUser(req: Request, res: Response) {
-    const { id } = req.params;
+  async handleUpdateUser(req, res) {
+    const id = req.userId;
+
+    if (!id) {
+      throw new NotFoundError("ID não enviado");
+    }
+
     const updatedData = req.body;
 
     const service = new UserService();
 
-    const updateUserService = await service.updateUserService(id, updatedData);
+    const updateUserService = await service.updateUser(id, updatedData);
 
     return res.json(updateUserService).status(204);
   }
 
-  async handleDeleteUser(req: Request, res: Response) {
-    const { id } = req.params;
+  async handleDeleteUser(req, res) {
+    const id = req.userId;
 
     const service = new UserService();
 
-    const deleteUserService = await service.deleteUserService(id);
+    const deleteUserService = await service.deleteUser(id);
 
-    return res.json(deleteUserService).status(202);
+    return res.status(202).json(deleteUserService);
   }
 }

@@ -1,11 +1,8 @@
-import "express-async-errors";
-import { Request, Response } from "express";
-
 import { UnauthorizedError } from "../helpers/api-error";
 import { TokenService } from "../services/TokenService";
 
 export class TokenController {
-  async store(req: Request, res: Response) {
+  async store(req, res) {
     const { email, password } = req.body;
 
     if (!email || !password) {
@@ -14,8 +11,8 @@ export class TokenController {
 
     const service = new TokenService();
 
-    const verifyUser = await service.handleToken({ email, password });
+    const token = await service.handleToken({ email, password });
 
-    return res.json("OK");
+    return res.json({ token }).status(200);
   }
 }
