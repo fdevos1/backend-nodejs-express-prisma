@@ -2,6 +2,9 @@
   "name": "back-end",
   "version": "1.0.0",
   "main": "src/index.ts",
+  "engines": {
+    "node": "18"
+  },
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
     "build": "tsup src",
