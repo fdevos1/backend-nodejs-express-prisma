@@ -15,7 +15,7 @@ export class UserControllers {
 
     const service = new UserService();
 
-    const getById = service.findUserById(id);
+    const getById = await service.findUserById(id);
 
     return res.status(200).json(getById);
   }
