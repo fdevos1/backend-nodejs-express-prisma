@@ -4,7 +4,6 @@
   "main": "src/app.ts",
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
-    "build": "tsc --build",
     "start": "node src/app.ts"
   },
   "license": "ISC",
