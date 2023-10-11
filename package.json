@@ -4,7 +4,8 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "ts-node-dev src/index.ts",
-    "start": "node src/index.ts"
+    "build": "tsc",
+    "start": "node dist/index.ts"
   },
   "license": "ISC",
   "dependencies": {
