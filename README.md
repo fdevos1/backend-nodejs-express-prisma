@@ -26,6 +26,7 @@ Para rodar a API local realizar:
 <!--ts-->
 
 - [Users](#users)
+- [Token](#Token)
 <!--te-->
 
 ## Users
@@ -34,45 +35,45 @@ endpoint: /user
 
 ### Retornar todos o usuários
 
-get
-/user/get-users
-Rota autenticada
+- get
+- /user/get-users
+- Rota autenticada
 
 ### Retornar um usuário
 
-get
-/user/get-user&id=id
-Rota autenticada
+- get
+- /user/get-user&id=id
+- Rota autenticada
 
 ### Criar usuário
 
-post
-/user/create-user
-Rota não autenticada
+- post
+- /user/create-user
+- Rota não autenticada
 
 ### Código OTP para autenticar usuário (Caso esqueça a senha)
 
-post
-/user/create-otp
-Rota não autenticada
+- post
+- /user/create-otp
+- Rota não autenticada
 
 ### Atualizar informação de usuário
 
-put
-/user/update-user
-Rota autenticada
+- put
+- /user/update-user
+- Rota autenticada
 
 ### Criar nova senha
 
-put
-/user/reset-password
-Rota não autenticada
+- put
+- /user/reset-password
+- Rota não autenticada
 
 ### Deletar usuário
 
-delete
-/user/delete-user
-Rota autenticada
+- delete
+- /user/delete-user
+- Rota autenticada
 
 ## Token
 
@@ -80,8 +81,8 @@ endpoint: /token
 
 ### Criar token de autenticação
 
-post
-/token/authenticate-user
-Rota para autenticar usuário
+- post
+- /token/authenticate-user
+- Rota para autenticar usuário
 
 Token expira em 3 dias
