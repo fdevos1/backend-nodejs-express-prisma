@@ -38,12 +38,33 @@ endpoint: /user
 - get
 - /user/get-users
 - Rota autenticada
+  Retorno
+
+```ts
+[
+  {
+    name: "Nome Sobrenome",
+    email: "fake@mail.com",
+    id: 1,
+  },
+];
+```
 
 ### Retornar um usuário
 
 - get
 - /user/get-user&id=id
 - Rota autenticada
+
+  Retorno
+
+```ts
+  {
+    name: "Nome Sobrenome",
+    email: "fake@mail.com",
+    id: 1,
+  }
+```
 
 ### Criar usuário
 
