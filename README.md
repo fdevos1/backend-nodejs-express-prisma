@@ -4,6 +4,8 @@ Desafio garupa back-end feito com Express e Prisma
 
 ## API
 
+Link: https://backend-desafio-garupa.onrender.com
+
 Para rodar a API local realizar:
 
 ```bash
