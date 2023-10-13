@@ -49,6 +49,16 @@ export class UserControllers {
     return res.json(updateUserService).status(204);
   }
 
+  async handleResetPassword(req, res) {
+    const { password, email } = req.body;
+
+    const service = new UserService();
+
+    const resetPasswordService = await service.resetPassword(email, password);
+
+    return res.json(resetPasswordService).status(204);
+  }
+
   async handleDeleteUser(req, res) {
     const id = req.userId;
 

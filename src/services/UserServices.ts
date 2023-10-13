@@ -96,6 +96,30 @@ export class UserService {
     return updatedUser;
   }
 
+  async resetPassword(email: string, password: string) {
+    const user = await prismaClient.user.findFirst({
+      where: {
+        email,
+      },
+    });
+
+    if (!user) {
+      throw new NotFoundError("Usuário não existe");
+    }
+    const hashPassword = await hash(password, 8);
+
+    const updatedUserPassword = await prismaClient.user.update({
+      where: {
+        email,
+      },
+      data: {
+        password: hashPassword,
+      },
+    });
+
+    return updatedUserPassword;
+  }
+
   async deleteUser(id: string) {
     const user = await prismaClient.user.findFirst({
       where: {

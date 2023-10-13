@@ -30,6 +30,8 @@ userRoutes.put(
   userController.handleUpdateUser
 );
 
+userRoutes.put("/reset-password", userController.handleResetPassword);
+
 userRoutes.delete(
   "/delete-user",
   authenticateUser,
