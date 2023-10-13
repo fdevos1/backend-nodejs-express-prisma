@@ -115,6 +115,11 @@ export class UserService {
       data: {
         password: hashPassword,
       },
+      select: {
+        id: true,
+        password: true,
+        updatedAt: true,
+      },
     });
 
     return updatedUserPassword;
@@ -131,12 +136,12 @@ export class UserService {
       throw new NotFoundError("Usuário não existe");
     }
 
-    const deletedUser = await prismaClient.user.delete({
+    await prismaClient.user.delete({
       where: {
         id: parseInt(id),
       },
     });
 
-    return deletedUser;
+    return { message: "User successfully deleted" };
   }
 }

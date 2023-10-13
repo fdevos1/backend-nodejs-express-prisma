@@ -60,7 +60,6 @@ export class SendRecoveryPass {
 
     transport.sendMail(mail_configs, function (error, info) {
       if (error) {
-        console.log(error);
         return res.json({ message: `Ocorreu um erro` });
       }
       return res.json({ message: "E-mail enviado com sucesso" });

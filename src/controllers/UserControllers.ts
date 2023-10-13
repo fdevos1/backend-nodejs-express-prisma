@@ -68,8 +68,4 @@ export class UserControllers {
 
     return res.status(202).json(deleteUserService);
   }
-
-  async handleSendRecoveryPass(req, res) {
-    const { email, OTP } = req.body;
-  }
 }
