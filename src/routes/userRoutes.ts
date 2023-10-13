@@ -22,7 +22,7 @@ userRoutes.get(
 );
 
 userRoutes.post("/create-user", userController.handleCreateNewUser);
-userRoutes.post("/reset-password", recoveryPassController.handle);
+userRoutes.post("/create-otp", recoveryPassController.handle);
 
 userRoutes.put(
   "/update-user",
