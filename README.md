@@ -73,7 +73,7 @@ endpoint: /user
 - /user/create-user
 - Rota não autenticada
 
-- Espera
+  - Espera
 
 ```ts
 {
@@ -81,10 +81,9 @@ endpoint: /user
   name: "",
   password: ""
 },
-
 ```
 
-- Retorna
+    - Retorna
 
 ```ts
 {
@@ -101,7 +100,7 @@ endpoint: /user
 - /user/create-otp
 - Rota não autenticada
 
-- Espera
+  - Espera
 
 ```ts
 {
@@ -110,7 +109,7 @@ endpoint: /user
 
 ```
 
-- Retorna
+    - Retorna
 
 ```ts
 {
@@ -124,7 +123,7 @@ endpoint: /user
 - /user/update-user
 - Rota autenticada
 
-- Espera
+  - Espera
 
 ```ts
 {
@@ -134,7 +133,7 @@ endpoint: /user
 
 ```
 
-- Retorna
+    - Retorna
 
 ```ts
 {
@@ -151,7 +150,7 @@ endpoint: /user
 - /user/reset-password
 - Rota não autenticada
 
-- Retorna
+  - Retorna
 
 ```ts
 {
@@ -168,7 +167,7 @@ endpoint: /user
 - /user/delete-user
 - Rota autenticada
 
-- Retorna
+  - Retorna
 
 ```ts
 {
