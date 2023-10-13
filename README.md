@@ -35,10 +35,11 @@ endpoint: /user
 
 ### Retornar todos o usuários
 
-- get
+- GET
 - /user/get-users
 - Rota autenticada
-  Retorno
+
+  - Retorna
 
 ```ts
 [
@@ -52,11 +53,11 @@ endpoint: /user
 
 ### Retornar um usuário
 
-- get
+- GET
 - /user/get-user&id=id
 - Rota autenticada
 
-  Retorno
+  - Retorna
 
 ```ts
   {
@@ -68,7 +69,7 @@ endpoint: /user
 
 ### Criar usuário
 
-- post
+- POST
 - /user/create-user
 - Rota não autenticada
 
@@ -83,7 +84,7 @@ endpoint: /user
 
 ```
 
-Retorno
+- Retorna
 
 ```ts
 {
@@ -96,7 +97,7 @@ Retorno
 
 ### Código OTP para autenticar usuário (Caso esqueça a senha)
 
-- post
+- POST
 - /user/create-otp
 - Rota não autenticada
 
@@ -109,7 +110,7 @@ Retorno
 
 ```
 
-- Retorno
+- Retorna
 
 ```ts
 {
@@ -119,7 +120,7 @@ Retorno
 
 ### Atualizar informação de usuário
 
-- put
+- PUT
 - /user/update-user
 - Rota autenticada
 
@@ -133,7 +134,7 @@ Retorno
 
 ```
 
-Retorno
+- Retorna
 
 ```ts
 {
@@ -146,11 +147,11 @@ Retorno
 
 ### Criar nova senha
 
-- put
+- PUT
 - /user/reset-password
 - Rota não autenticada
 
-Retorno
+- Retorna
 
 ```ts
 {
@@ -163,11 +164,11 @@ Retorno
 
 ### Deletar usuário
 
-- delete
+- DELETE
 - /user/delete-user
 - Rota autenticada
 
-Retorno
+- Retorna
 
 ```ts
 {
@@ -183,7 +184,7 @@ endpoint: /token
 
 ### Criar token de autenticação
 
-- post
+- POST
 - /token/authenticate-user
 - Rota para autenticar usuário
 
@@ -197,7 +198,7 @@ endpoint: /token
 
 ```
 
-Retorno
+- Retorna
 
 ```ts
 {
